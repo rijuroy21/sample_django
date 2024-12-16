@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="main1">
+        <div class="main">
+            <div class="nav">
+                <div class="nav1">
+                    <img src="{% static 'image/starbucks.png' %}" alt="">
+                    <!-- <h3>Home</h3>
+                    <h3>Gift</h3>
+                    <h3>Order</h3>
+                    <h3>Pay</h3>
+                    <h3>Store</h3> -->
+                    <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="gift.html">Gift</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="">Pay</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="">Store</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="nav2">
+                <input type="text"
+                    placeholder="looking for specific something?">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img width="64" height="64" src="../Starbucksclone/account_thin.svg">
+            </div>
+        </div>
+    </div>
+    <div class="heading">
+        <h1>Starbucks</h1>
+        <input type="button" id="btn1" value="know more">
+    </div>
+    <div class="content">
+        <div class="content1">
+            <h1>Handcraft Curation</h1>
+            <div class="part1">
+                <div class="img">
+                    <img src="{% static 'image/starbucks.png' %}" alt="">
+                    <h5>Bestseller</h5>
+                </div>
+                <div class="img">
+                    <img src="{% static 'image/Drinks.jpg' %}" alt="">
+                    <h5>Drinks</h5>
+                </div>
+                <div class="img">
+                    <img src="{% static 'image/food.avif' %}" alt="">
+                    <h5>Foods</h5>
+                </div>
+                <div class="img">
+                    <img src="{% static 'image/Merchandise.webp'%}" alt="">
+                    <h5>Merchandise</h5>
+                </div>
+                <div class="img">
+                    <img src="{% static 'image/CoffeeAtHome.jpg'%}" alt="">
+                    <h5>Coffee at Home</h5>
+                </div>
+                <div class="img">
+                    <img src=".{% static 'image/ReadyToEat.jpg'%}" alt="">
+                    <h5>Ready to eat</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content3">
+            <h1>Barista Reccomends</h1>
+            <p><a href="#">View Menu</a></p>
+        </div>
+        <div class="item">
+            <div class="content4">
+                <img src="{% static 'image/coffee.jpeg'%}" alt="" class="img1">
+                <div class="a">
+                    <h3>Cappuccino</h3>
+                    <h6>Short()</h6>
+                </div>
+                <div class="b">
+                    <h6>&#8377;283.50</h6>
+                    <button>Add item</button>
+                </div>
+            </div>
+            <div class="content5">
+                <img src="{% static 'image/104997.webp'%}" alt="" class="img2">
+                <div class="a1">
+                    <h3>Cold brew black</h3>
+                    <h6>Short(Short cold brew black)</h6>
+                </div>
+                <div class="b1">
+                    <h6>&#8377;299.25</h6>
+                    <button>Add item</button>
+                </div>
+            </div>
+            <div class="content6">
+                <img src="{% static 'image/112573.webp'%}" alt="" class="img3">
+                <div class="a2">
+                    <h3>Vannilla Milkshake</h3>
+                    <h6>tall(354ml).per service(354ml)-531kcal</h6>
+                </div>
+                <div class="b3">
+                    <h6>&#8377;299.25</h6>
+                    <button>Add item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content7">
+        <div class="content8">
+            <h1>Learn more about the world of coffee</h1>
+        </div>
+        <div class="content9">
+            <div class="content10">
+
+                <h1>Art & Science of coffee brewing</h1>
+                <p>Master the perfect brew with starbucks! Learn the art and science of coffee brewing</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer1">
+            <div class="footer_links"><img class="first" src="{% static 'image/starbucks.png'%}" alt=""></div>
+            <div class="footer_links">
+                About us
+                <ul class="footer-ul">
+                    <li class="footer-li"><a href="#">Our heritage</a></li>
+                    <li class="footer-li"><a href="#">Coffeehouse</a></li>
+                    <li class="footer-li"><a href="#">Our Company</a></li>
+                </ul>
+            </div>
+            <div class="footer_links">
+                Responsibility
+                <ul class="footer-ul">
+                    <li class="footer-li"><a href="#">Diversity</a></li>
+                    <li class="footer-li"><a href="#">Community</a></li>
+                    <li class="footer-li"><a href="#">Ethical Sourcing</a></li>
+                    <li class="footer-li"><a href="#">Environmental Stewardship</a></li>
+                    <li class="footer-li"><a href="#">Learn more</a></li>
+                </ul>
+            </div>
+            <div class="footer_links">
+                Quick Links
+                <ul class="footer-ul">
+                    <li class="footer-li"><a href="#">Privacy policy</a></li>
+                    <li class="footer-li"><a href="#">FAQs</a></li>
+                    <li class="footer-li"><a href="#">Starbucks India Mobile App Terms of Use</a></li>
+                    <li class="footer-li"><a href="#">Customer Service</a></li>
+                    <li class="footer-li"><a href="#">Delivery</a></li>
+                    <li class="footer-li"><a href="#">Seasons Gifting</a></li>
+                    <li class="footer-li"><a href="#">Loyality program terms and conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer_links">
+                SOCIAL MEDIA
+                <div class="footer_links1">
+                    <img src="../Starbucksclone/instagram.svg" alt="">
+                    <img src="../Starbucksclone/facebook.svg" alt="">
+                    <img src="../Starbucksclone/twitter.svg" alt="">
+                </div>
+            </div>
+            <div class="footer_links">
+                <ul class="footer-ul">
+                    <li><img src="{% static 'image/appstoreAndroid.png'%}" alt=""></li>
+                    <li><img src="{% static 'image/appstoreiOS.png'%}" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

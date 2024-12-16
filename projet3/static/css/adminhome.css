@@ -1,0 +1,32 @@
+.main {
+    display: flex;
+    gap: 100px;
+    padding: 40px;
+  }
+  .a, .b, .c {
+    margin-bottom: 15px;  
+    padding: 20px;     
+    border: 1px solid #0b0101;
+    width: 600px;        
+    height: 80px;     
+  }
+  
+  .a1, .a2, .a3, .a4, .b1, .b2, .b3, .b4, .c1, .c2, .c3, .c4{
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  .a1, .a2, .a3, .a4 {
+    background-color: lightcoral;
+    color: green; 
+  }
+  
+  .b1, .b2, .b3, .b4 {
+    background-color: chartreuse;
+    color: blue;
+  }
+  
+  .c1, .c2, .c3, .c4 {
+    background-color: aqua;
+    color: orange;
+  }
