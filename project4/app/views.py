@@ -6,13 +6,13 @@ ad_us='admin'
 ad_psw='admin@123'
 def adminlogin(request):
     if request.method=='POST':
-        adm_us=request.POST['adminusername']
-        adm_psw=request.POST['adminpassword']
+        adm_us=request.POST['username']
+        adm_psw=request.POST['password']
         if ad_us==adm_us and ad_psw==adm_psw:
             return redirect(adminhome)
     return render(request,'Admin/adminlogin.html')
 def adminhome(request):
-    return render(request,'Admin/adminhome.html')
+    return render(request,'Admin/adminhomepage.html')
 
 def register(request):
     if request.method=='POST':
