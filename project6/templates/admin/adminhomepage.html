@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-home</title>
+    
+</head>
+<body>
+    {{users}}
+    <h1>Welcome to Admin Homepage</h1>
+    <div class="main" style="color: rgb(0, 0, 0);">
+        {% for i in users %}
+        <div class="a">
+            <div class="a1">Name : {{i.first_name}}</div>
+            <div class="a2">Email : {{i.email}}</div>
+            <div class="a3">Username : {{i.username}}</div>
+            <div class="a4">Date joined : {{i.date_joined}}</div>
+            <div class="a5">Last login : {{i.last_login}}</div>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

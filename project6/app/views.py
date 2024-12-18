@@ -23,15 +23,18 @@ def adminhome(request):
 
 
 def register(request):
+    departments=department.object.all()                               
     if request.method=='POST':
         name=request.POST['name']
         email=request.POST['email']
         username=request.POST['username']
         password=request.POST['password']
-        data=User.objects.create_user(first_name=name,email=email,username=username,password=password)
+        dep=request.post['d']
+        current_dep=department.object.get(pk=dep)
+        data=employee.objects.create(name=name,email=email,username=username,password=password)
         data.save()
         return redirect(login)
-    return render(request,'user/register.html')
+    return render(request,'user/register.html',{'deps':departments})
 
         
 

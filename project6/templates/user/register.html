@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="../" method="POST">
+        {% csrf_token %}
+    <h1>REGISTER</h1>
+    Name  <input type="text" name="name" id=""><br><br>
+    Email  <input type="email" name="email" id=""><br><br>
+    <select name="d" id="" class="form-control mt-1">
+        <option selected disabled>
+            {% for i in deps %}
+            <option value="{{i}}">{{i.dname}}</option>
+            {% endfor %}
+    </select>
+    Username  <input type="text" name="username" id=""><br><br>
+    Password  <input type="password" name="password" id=""><br><br>
+    <button value="submit">Register</button>
+</form>
+<a href="../">Already have an account? pls login</a>
+</body>
+</html>
