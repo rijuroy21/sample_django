@@ -15,23 +15,26 @@ def adminlogin(request):
             return redirect(adminhome)
     return render(request,'admin/adminlogin.html')
 
-
 def adminhome(request):
-    users=User.objects.all()
-    print(users)
-    return render(request,'admin/adminhomepage.html',{'users':users})
+    emps=employee.objects.all()
+    deps=department.objects.all()
+    if request.method=='POST':
+        dep=request.POST['d']
+        deppk=department.objects.get(pk=dep)
+        emps=employee.objects.filter(dname=deppk)
+    return render(request,'admin/adminhomepage.html',{'deps':deps,'emps':emps})
 
 
 def register(request):
-    departments=department.object.all()                               
+    departments=department.objects.all()                               
     if request.method=='POST':
         name=request.POST['name']
         email=request.POST['email']
         username=request.POST['username']
         password=request.POST['password']
-        dep=request.post['d']
-        current_dep=department.object.get(pk=dep)
-        data=employee.objects.create(name=name,email=email,username=username,password=password)
+        dep=request.POST['d']
+        current_dep=department.objects.get(pk=dep)
+        data=employee.objects.create(name=name,email=email,username=username,password=password,dname=current_dep)
         data.save()
         return redirect(login)
     return render(request,'user/register.html',{'deps':departments})

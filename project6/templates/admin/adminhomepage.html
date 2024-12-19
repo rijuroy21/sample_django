@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-home</title>
-    
 </head>
 <body>
-    {{users}}
-    <h1>Welcome to Admin Homepage</h1>
-    <div class="main" style="color: rgb(0, 0, 0);">
-        {% for i in users %}
-        <div class="a">
-            <div class="a1">Name : {{i.first_name}}</div>
-            <div class="a2">Email : {{i.email}}</div>
-            <div class="a3">Username : {{i.username}}</div>
-            <div class="a4">Date joined : {{i.date_joined}}</div>
-            <div class="a5">Last login : {{i.last_login}}</div>
-
+    <h1> home</h1>
+   
+    <form action="../adminhomepage" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <select name="d" id="" class="form-control mt-1">
+                        <option selected disabled >--select your department--</option>
+                        {% for i in deps %}
+                            <option value="{{i.pk}}">{{i.dname}}</option>
+                        {% endfor %}    
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-success">Search</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% for i in emps %}
+        <div>
+            {{i.name}}
+            {{i.email}}
+            {{i.dname}}
         </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 </body>
 </html>

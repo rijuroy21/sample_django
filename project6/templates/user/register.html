@@ -14,9 +14,9 @@
     <select name="d" id="" class="form-control mt-1">
         <option selected disabled>
             {% for i in deps %}
-            <option value="{{i}}">{{i.dname}}</option>
+            <option value="{{i.pk}}">{{i.dname}}</option>
             {% endfor %}
-    </select>
+    </select><br><br>
     Username  <input type="text" name="username" id=""><br><br>
     Password  <input type="password" name="password" id=""><br><br>
     <button value="submit">Register</button>
