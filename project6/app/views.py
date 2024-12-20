@@ -39,31 +39,35 @@ def register(request):
         return redirect(login)
     return render(request,'user/register.html',{'deps':departments})
 
-        
-
+    
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
-        # print(username,password)
-        user=auth.authenticate(username=username,password=password)
-        print(user)
-        if user:
-            print(user)
-            auth.login(request,user)
-            return redirect(home)
+        data=employee.objects.all()
+        for i in data:
+            if i.username==username and i.password==password:
+                print(i)
+                request.session['userlog']=i.username
+                return redirect(home)
     return render(request,'user/login.html')
 
 
+
 def home(request):
-    if '_auth_user_id' in request.session:
-        return render(request,'user/home.html')
+    if 'userlog' in request.session:
+        emps=employee.objects.filter(username=request.session['userlog'])
+        return render(request,'user/homepage.html',{'emps':emps})
     else:
         return redirect(login)
     
+def update(request):
+     if 'userlog' in request.session:
+
+    
     
 def logout(request):
-    if '_auth_user_id' in request.session:
+    if 'userlog' in request.session:
         return redirect(login)
     else:
         return redirect(login)

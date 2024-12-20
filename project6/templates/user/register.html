@@ -11,8 +11,8 @@
     <h1>REGISTER</h1>
     Name  <input type="text" name="name" id=""><br><br>
     Email  <input type="email" name="email" id=""><br><br>
-    <select name="d" id="" class="form-control mt-1">
-        <option selected disabled>
+    Department<select name="d" id="" class="form-control mt-1">
+        <option selected disabled>--select your department--
             {% for i in deps %}
             <option value="{{i.pk}}">{{i.dname}}</option>
             {% endfor %}
@@ -21,6 +21,6 @@
     Password  <input type="password" name="password" id=""><br><br>
     <button value="submit">Register</button>
 </form>
-<a href="../">Already have an account? pls login</a>
+<a href="../login">Already have an account? pls login</a>
 </body>
 </html>

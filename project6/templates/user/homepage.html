@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Welcome</h1>
+    {% for i in emps %}
+    <div>
+        {{i.name}}
+        {{i.email}}
+        {{i.dname}}
+    </div>
+    {% endfor %}
+    <button type="submit">update</button><br><br>
     <a href="../logout">logout</a>
 </body>
 </html>
