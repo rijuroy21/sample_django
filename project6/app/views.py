@@ -52,20 +52,22 @@ def login(request):
                 return redirect(home)
     return render(request,'user/login.html')
 
-
-
 def home(request):
     if 'userlog' in request.session:
         emps=employee.objects.filter(username=request.session['userlog'])
         return render(request,'user/homepage.html',{'emps':emps})
     else:
         return redirect(login)
-    
+
 def update(request):
      if 'userlog' in request.session:
-
-    
-    
+        emps=employee.objects.get(username=request.session['userlog'])
+        if request.method=='POST':
+            name=request.POST['name']
+            email=request.POST['email']    
+            emps=employee.objects.filter(username=request.session['userlog']).update(name=name,email=email)
+            return redirect(home)
+     return render(request,'user/update.html',{'emps':emps})
 def logout(request):
     if 'userlog' in request.session:
         return redirect(login)

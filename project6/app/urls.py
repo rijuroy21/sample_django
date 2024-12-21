@@ -8,4 +8,5 @@ urlpatterns=[
     path('logout',views.logout),
     path('adminhomepage',views.adminhome),
     path('adminlogin',views.adminlogin),
+    path('update',views.update),
 ]

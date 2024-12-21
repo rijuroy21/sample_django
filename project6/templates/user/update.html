@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../homepage" method="POST">
+    <form action="../update" method="POST">
         {% csrf_token %}
-        <input type="text" name="todo" id="" value="{{sub}}" placeholder="Enter your content">
-        <button value="submit">Update</button>
+        <input type="text" name="name" id="" value="{{emps.name}}" placeholder="Enter your content">
+        <input type="text" name="email" id="" value="{{emps.email}}" placeholder="Enter your content">
+        <button type="submit">update</button>
     </form>
 </body>
 </html>
