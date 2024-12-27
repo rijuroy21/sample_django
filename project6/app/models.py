@@ -15,3 +15,11 @@ class employee(models.Model):
 
     def __str__(self):
         return self.name
+
+class student(models.Model):
+    roll=models.IntegerField()
+    name=models.TextField()
+    mark=models.IntegerField()
+
+    def __str__(self):
+        return self.name

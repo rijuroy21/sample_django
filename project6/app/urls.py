@@ -9,4 +9,5 @@ urlpatterns=[
     path('adminhomepage',views.adminhome),
     path('adminlogin',views.adminlogin),
     path('update',views.update),
+    path('user_stud',views.user_form_dis),
 ]

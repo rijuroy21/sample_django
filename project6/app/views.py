@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.models import User,auth
-
+from .forms import *
 
 # Create your views here.
 
@@ -24,7 +24,6 @@ def adminhome(request):
         emps=employee.objects.filter(dname=deppk)
     return render(request,'admin/adminhomepage.html',{'deps':deps,'emps':emps})
 
-
 def register(request):
     departments=department.objects.all()                               
     if request.method=='POST':
@@ -39,7 +38,6 @@ def register(request):
         return redirect(login)
     return render(request,'user/register.html',{'deps':departments})
 
-    
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -73,3 +71,16 @@ def logout(request):
         return redirect(login)
     else:
         return redirect(login)
+    
+def user_form_dis(request):
+    data=user_form()
+    if request.method=='POST':
+            form=user_form(request.POST)
+            if form.is_valid():
+                roll=form.cleaned_data['roll']
+                name=form.cleaned_data['name']
+                mark=form.cleaned_data['mark']
+                data1=student.objects.create(roll=roll,name=name,mark=mark)
+                data1.save()
+
+    return render(request,'user/user_stud.html',{'data':data})            
