@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    {{subjects}}
+    <form action="../" method="POST">
+        {% csrf_token %}
+        <div class="main">
+            <div class="a">
+                <div class="a1"><textarea name="text" id=""></textarea></div>
+                <div class="a2"><button value="submit">+</button></div>
+            </div>
+            {% for i in subjects %}
+            <div class="b">
+                <div class="b1">sl.no:{{i.slno}}</div>
+                <div class="b2">sub:{{i.sub}}</div>
+                <div class="b3"><a href="../todo_update/{{i.slno}}">update</a></div>
+                <div class="b4"><a href="../todo_delete/{{i.slno}}">Delete</a></div>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</body>
+
+</html>

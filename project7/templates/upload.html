@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form action="../upload" method="POST">
+        {% csrf_token %}
+        <input type="file" name="data" id="">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
