@@ -8,7 +8,13 @@ class teacher(models.Model):
 
 class UserUpload(models.Model):
     document = models.FileField()
+
+class User(models.Model):
+    name=models.TextField()
+    email=models.TextField()
+    username=models.TextField()
+    password=models.TextField()
+    document=models.ForeignKey(UserUpload,on_delete=models.CASCADE)
+
     
 
-    def __str__(self):
-        return self.title
